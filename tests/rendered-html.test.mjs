@@ -26,8 +26,9 @@ test("publication ships its finished identity and editorial sections", async () 
 });
 
 test("editorial studio and persistent article API are connected", async () => {
-  const [studio, route, db, hosting] = await Promise.all([
-    read("app/studio/studio.tsx"), read("app/api/articles/route.ts"),
+  const [studio, studioPage, route, auth, db, hosting] = await Promise.all([
+    read("app/studio/studio.tsx"), read("app/studio/page.tsx"),
+    read("app/api/articles/route.ts"), read("app/editor-auth.ts"),
     read("db/index.ts"), read(".openai/hosting.json"),
   ]);
   assert.match(studio, /fetch\("\/api\/articles"/);
@@ -36,6 +37,9 @@ test("editorial studio and persistent article API are connected", async () => {
   assert.match(route, /export async function GET/);
   assert.match(route, /export async function POST/);
   assert.match(route, /INSERT INTO articles/);
+  assert.match(route, /getEditor/);
+  assert.match(studioPage, /requireEditor/);
+  assert.match(auth, /SHA-256/);
   assert.match(db, /CREATE TABLE IF NOT EXISTS articles/);
   assert.match(db, /CREATE INDEX IF NOT EXISTS idx_articles_status_created/);
   assert.match(hosting, /"d1": "DB"/);

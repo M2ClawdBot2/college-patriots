@@ -1,4 +1,5 @@
 import { ensureDb } from "../../../db";
+import { getEditor } from "../../editor-auth";
 
 const seed = [
   ["The speech code nobody voted for", "University of Michigan", "Campus life", "published", "site,x", 18420, 8],
@@ -20,6 +21,7 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  if (!await getEditor()) return Response.json({error:"Editorial access required"},{status:403});
   const data = await request.json() as {title?:string;school?:string;category?:string;body?:string;status?:string;channel?:string};
   if (!data.title?.trim() || !data.school?.trim()) return Response.json({error:"Title and school are required"},{status:400});
   const db = await ensureDb(); const now = new Date().toISOString();
