@@ -34,12 +34,14 @@ export default function Home() {
         <div className="eyebrow"><span>EST. 2026</span><span>STUDENT NEWS NETWORK</span><span>ISSUE NO. 001</span></div>
         <h1>THE CAMPUS<br/><em>RECORD,</em> UNFILTERED.</h1>
         <div className="hero-bottom">
-          <p>Original reporting and video dispatches from students documenting the ideas, policies, and institutions shaping American campus life.</p>
+          <p>America First reporting and video dispatches from students documenting the ideas, policies, and institutions shaping American campus life.</p>
           <div className="scroll-note">SCROLL TO ENTER<br/><span>↓</span></div>
         </div>
       </section>
 
       <section className="ticker" aria-label="Latest updates"><span>LIVE DESK</span><div>NEW: UCLA STUDENTS QUESTION $2.4M PROGRAM&nbsp;&nbsp;◆&nbsp;&nbsp; VIDEO: THE DEBATE THAT ALMOST DIDN'T HAPPEN&nbsp;&nbsp;◆&nbsp;&nbsp; 14 CAMPUSES REPORTING THIS WEEK</div></section>
+
+      <section className="position"><span>OUR POSITION</span><h2>AMERICA FIRST.<br/>NO APOLOGIES.</h2><p>We defend secure borders, national sovereignty, free speech, and American students. We oppose mass immigration and illegal immigration—and we report on how both reshape campuses, communities, and the country.</p><div>SECURE THE BORDER <b>◆</b> AMERICAN STUDENTS FIRST <b>◆</b> DEFEND FREE SPEECH</div></section>
 
       <section className="lead-story" id="dispatches">
         <div className="lead-mark"><span>THE</span><strong>BIG</strong><span>STORY</span></div>
@@ -56,7 +58,7 @@ export default function Home() {
 
       <section className="arcade" id="arcade"><div><span className="index">/04</span><h2>CAMPUS<br/><em>ARCADE</em></h2><p>News literacy, campus absurdity, and bragging rights. A two-minute reset between reports.</p><button className="read-button dark" onClick={()=>setGame(!game)}>{game ? "CLOSE GAME" : "PLAY TODAY'S GAME"} <span>→</span></button></div><div className="game-card"><div className="game-label">TODAY'S GAME · POLICY OR PARODY?</div>{game ? <div className="game-live"><p>“All spontaneous expression must be reserved 72 hours in advance.”</p><div><button onClick={()=>setScore(score+1)}>REAL POLICY</button><button onClick={()=>setScore(score+1)}>PARODY</button></div><b>SCORE {score}/5</b></div> : <><div className="pixel-flag">?</div><h3>POLICY OR<br/>PARODY?</h3><p>Can you tell a real campus rule from one we made up?</p></>}</div></section>
 
-      <section className="editorial" id="about"><div className="origin"><span>OUR ORIGIN / GAINESVILLE, FL</span><h2>BUILT ON<br/>CAMPUS.</h2><p>College Patriots was established at the University of Florida by members of the UF College Republicans. What started in Gainesville is growing into a national network for student reporting.</p><div className="gator-mark">UF<br/><small>EST. 2026</small></div></div><div className="editor-card"><span>EDITORIAL LEADERSHIP</span><div className="editor-initials">JC</div><h3>JORDAN<br/>CONRADSON</h3><b>MANAGING EDITOR</b><p>White House and Pentagon correspondent for The Gateway Pundit, known for aggressive political reporting and a First Amendment press-access case against Maricopa County.</p><a href="https://x.com/ConradsonJordan" target="_blank" rel="noreferrer">FOLLOW JORDAN ON 𝕏 ↗</a></div></section>
+      <section className="editorial" id="about"><div className="origin"><span>OUR ORIGIN / GAINESVILLE, FL</span><h2>BUILT ON<br/>CAMPUS.</h2><p>College Patriots was established at the University of Florida by members of the UF College Republicans. What started in Gainesville is growing into a national America First network for student reporting.</p><div className="gator-mark">UF<br/><small>EST. 2026</small></div></div><div className="editor-card"><span>EDITORIAL LEADERSHIP</span><img className="editor-portrait" src="/jordan-conradson-newsprint.png" alt="Stylized portrait of managing editor Jordan Conradson"/><h3>JORDAN<br/>CONRADSON</h3><b>MANAGING EDITOR</b><p>White House and Pentagon correspondent for The Gateway Pundit, known for aggressive political reporting and a First Amendment press-access case against Maricopa County.</p><a href="https://x.com/ConradsonJordan" target="_blank" rel="noreferrer">FOLLOW JORDAN ON 𝕏 ↗</a></div></section>
 
       <section className="newsletter"><span>THE WEEKLY BRIEF</span><h2>Seven days.<br/>Five stories.<br/><em>Zero spin.</em></h2>{joined ? <div className="success">YOU'RE ON THE LIST. WATCH YOUR INBOX. ✓</div> : <form onSubmit={(e)=>{e.preventDefault(); if(email) setJoined(true)}}><label className="sr-only" htmlFor="email">Email address</label><input id="email" type="email" required placeholder="YOUR EMAIL ADDRESS" value={email} onChange={e=>setEmail(e.target.value)}/><button>JOIN THE BRIEF →</button></form>}<p>One sharp email every Friday. Unsubscribe whenever.</p></section>
 

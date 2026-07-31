@@ -15,6 +15,9 @@ test("publication ships its finished identity and editorial sections", async () 
   assert.match(page, /FIELD<br\/>DISPATCHES/);
   assert.match(page, /POLICY OR PARODY/);
   assert.match(page, /University of Florida/);
+  assert.match(page, /AMERICA FIRST/);
+  assert.match(page, /oppose mass immigration and illegal immigration/);
+  assert.match(page, /jordan-conradson-newsprint\.png/);
   assert.match(page, /JORDAN/);
   assert.match(page, /CONRADSON/);
   assert.match(page, /https:\/\/x\.com\/ConradsonJordan/);

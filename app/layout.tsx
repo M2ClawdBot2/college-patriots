@@ -8,10 +8,10 @@ const mono = Space_Mono({ variable: "--font-mono", weight: ["400", "700"], subse
 
 export const metadata: Metadata = {
   title: "College Patriots — The Campus Record, Unfiltered",
-  description: "Independent student reporting and video dispatches from universities across America.",
+  description: "America First student reporting and video dispatches from universities across the United States.",
   icons: { icon: "/favicon.svg" },
-  openGraph: { title: "College Patriots", description: "The campus record, unfiltered.", images: ["/og.png"] },
-  twitter: { card: "summary_large_image", title: "College Patriots", description: "The campus record, unfiltered.", images: ["/og.png"] },
+  openGraph: { title: "College Patriots", description: "America First. The campus record, unfiltered.", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", title: "College Patriots", description: "America First. The campus record, unfiltered.", images: ["/og.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
