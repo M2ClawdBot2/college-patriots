@@ -8,7 +8,8 @@ test("publication ships its finished identity and editorial sections", async () 
   const [page, layout, css] = await Promise.all([
     read("app/page.tsx"), read("app/layout.tsx"), read("app/globals.css"),
   ]);
-  assert.match(layout, /College Patriots — The Campus Record, Unfiltered/);
+  assert.match(layout, /The University Patriot — The Campus Record, Unfiltered/);
+  assert.match(page, /THE UNIVERSITY<br\/>PATRIOT/);
   assert.match(layout, /\/og\.png/);
   assert.doesNotMatch(layout, /Starter Project|codex-preview/);
   assert.match(page, /THE CAMPUS/);

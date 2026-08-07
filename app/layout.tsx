@@ -7,11 +7,11 @@ const body = Inter({ variable: "--font-body", subsets: ["latin"] });
 const mono = Space_Mono({ variable: "--font-mono", weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "College Patriots — The Campus Record, Unfiltered",
+  title: "The University Patriot — The Campus Record, Unfiltered",
   description: "America First student reporting and video dispatches from universities across the United States.",
   icons: { icon: "/favicon.svg" },
-  openGraph: { title: "College Patriots", description: "America First. The campus record, unfiltered.", images: ["/og.png"] },
-  twitter: { card: "summary_large_image", title: "College Patriots", description: "America First. The campus record, unfiltered.", images: ["/og.png"] },
+  openGraph: { title: "The University Patriot", description: "America First. The campus record, unfiltered.", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", title: "The University Patriot", description: "America First. The campus record, unfiltered.", images: ["/og.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
